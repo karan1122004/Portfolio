@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Failed to load PostCSS config",
+    "code": "PLUGIN_ERROR",
+    "plugin": "vite:css",
+    "hook": "transform",
+    "id": "C:/Users/hp/Downloads/KaranCodes/sachin portfolio/src/index.css"
+  }
+]
