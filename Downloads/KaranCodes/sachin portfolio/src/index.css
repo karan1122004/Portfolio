@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#f5f5f5] text-black font-sans selection:bg-[#f43f5e] selection:text-white;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: white;
+  border-left: 3px solid black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border: 3px solid black;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #f43f5e;
+}
+
+@layer components {
+  /* Neo-Brutalism Background */
+  .bg-dot-pattern {
+    background-image: radial-gradient(black 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 0 0;
+  }
+
+  .radial-pattern {
+    background-image: radial-gradient(circle, #000 2px, transparent 2.5px);
+    background-size: 32px 32px;
+    opacity: 0.1;
+  }
+
+  /* Core Brutalist Card */
+  .brutal-card {
+    @apply bg-white border-[3px] border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] rounded-xl transition-all duration-200;
+  }
+
+  .brutal-card:hover {
+    @apply transform -translate-y-1 -translate-x-1 shadow-[12px_12px_0_0_rgba(0,0,0,1)];
+  }
+
+  /* Specific shadow for active clicks */
+  .brutal-card:active {
+    @apply transform translate-y-1 translate-x-1 shadow-[2px_2px_0_0_rgba(0,0,0,1)];
+  }
+
+  /* Bold Typography styles */
+  .text-shadow-brutal {
+    text-shadow: 3px 3px 0px rgba(0,0,0,1);
+  }
+  
+  .text-shadow-brutal-white {
+    text-shadow: 2px 2px 0px rgba(255,255,255,1);
+  }
+}
+
+/* Floating Shapes Animations */
+.geo-shape {
+  position: absolute;
+  border: 4px solid black;
+  box-shadow: 6px 6px 0 0 rgba(0,0,0,1);
+  z-index: 0;
+}
+
+.geo-circle {
+  border-radius: 50%;
+  animation: float1 8s ease-in-out infinite alternate;
+}
+
+.geo-diamond {
+  transform: rotate(45deg);
+  animation: float2 12s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30px, -50px) rotate(15deg); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0) rotate(45deg); }
+  100% { transform: translate(-40px, 40px) rotate(90deg); }
+}
